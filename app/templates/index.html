@@ -1,5 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ message }}</h1>
+    <h1>Select your criteria below:</h1>
+    <h2>Gender</h2>
+    <select name=gender\_options method='GET' action=/'>
+            {% for entry in gender_options %}
+            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
+            {% endfor %}
+    </select>
+    <h2>Medication accepted?</h2>
+    <select name=medication\_options method='GET' action=/'>
+            {% for entry in scholarship_options %}
+            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
+            {% endfor %}
+    </select>
+    <h2>Insurance accepted?</h2>
+    <select name=insurance\_options method='GET' action=/'>
+            {% for entry in scholarship_options %}
+            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
+            {% endfor %}
+    </select>
+    <h2> Scholarships Accepted?</h2>
+    <select name=scholarship\_options method='GET' action=/'>
+            {% for entry in scholarship_options %}
+            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
+            {% endfor %}
+    </select>
 {% endblock %}

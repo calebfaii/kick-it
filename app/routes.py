@@ -1,8 +1,17 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
+app.debug = True
 
-@app.route('/')
-@app.route('/index')
+
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
-    message = "Travis is a gay ball"
-    return render_template('index.html', message=message)
+    gender_options = ['M', 'F']
+    scholarship_options = ['Yes', 'No']
+    medication_options = ['Yes', 'No']
+    insurance_options = ['Yes', 'No']
+    return render_template('index.html',
+                           scholarship_options=scholarship_options,
+                           gender_options=gender_options,
+                           medication_options=medication_options,
+                           insurance_options=insurance_options)
