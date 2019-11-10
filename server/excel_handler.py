@@ -5,7 +5,7 @@ class ExcelHandler(object):
         self.data = None
 
     def load_data_from_excel(self):
-        wb = load_workbook(filename='DB.xlsx')
+        wb = load_workbook(filename='server/DB.xlsx')
         sheet = wb['Soberhouses']
         raw_data = []
         for row in sheet:
@@ -41,9 +41,11 @@ def load_from_server():
     handler = ExcelHandler()
     handler.load_data_from_excel()
     data = handler.get_data()
-    soberhouses = []
+    headers = []
+    elements = []
     for row in data:
         record_object = Soberhouse(row)
-        soberhouses.append(record_object)
-    soberhouses.remove(soberhouses[0])
-    return soberhouses
+        elements.append(record_object)
+    headers.append(elements[0])
+    elements.remove(elements[0])
+    return [headers, elements]

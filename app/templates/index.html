@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <style>
+    div {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-top: 5px;
+    }
+    </style>
     <h1>Select your criteria below:</h1>
+    <div>
     <h2>Gender</h2>
     <select name=gender\_options method='GET' action=/'>
             {% for entry in gender_options %}
@@ -26,4 +36,10 @@
             <option value= "{{entry}}" SELECTED>{{entry}}</option>"
             {% endfor %}
     </select>
+    </div>
+    <div>
+        <form method="post">
+            <input type="submit" name="submit" value="Search for Sober Houses" >
+        </form>
+    </div>
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+    div {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-top: 5px;
+    }
+    </style>
+    <h1>Results:</h1>
+    <div>
+    <table>
+        {% for object in headers %}
+            <tr>
+                    <th>{{object.institution_name}}</th>
+                    <th>{{object.address}}</th>
+                    <th>{{object.phone}}</th>
+                    <th>{{object.gender}}</th>
+                    <th>{{object.scholarships_accepted}}</th>
+                    <th>{{object.medication_permitted}}</th>
+                    <th>{{object.insurance_accepted}}</th>
+            </tr>
+        {% endfor %}
+        {% for object in table_elements %}
+            <tr>
+                    <td>{{object.institution_name}}</td>
+                    <td>{{object.address}}</td>
+                    <td>{{object.phone}}</td>
+                    <td>{{object.gender}}</td>
+                    <td>{{object.scholarships_accepted}}</td>
+                    <td>{{object.medication_permitted}}</td>
+                    <td>{{object.insurance_accepted}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

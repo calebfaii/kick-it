@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+        p {
+          margin-top: 1px;
+          margin-bottom: 25px;
+          border-top: 1px solid black;
+        }
+        </style>
     </head>
     <body>
-        <div>KickIt: <a href="/index">Home</a></div>
+        <div>KickIt: <a href="/">Home</a></div>
         <hr>
         {% block content %}{% endblock %}
+        <p></p>
+        <div>© 2019 VastCaliber Consulting, LLC. Travis loves slimy balls in his face!</div>
     </body>
 </html>
