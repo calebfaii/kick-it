@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <style>
-        p {
-          margin-top: 1px;
-          margin-bottom: 25px;
-          border-top: 1px solid black;
-        }
-        </style>
-    </head>
-    <body>
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+    Welcome to KickIt
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-default">
         <div>KickIt: <a href="/">Home</a></div>
-        <hr>
-        {% block content %}{% endblock %}
-        <p></p>
-        <div>© 2019 VastCaliber Consulting, LLC. Travis loves slimy balls in his face!</div>
-    </body>
-</html>
+    </nav>
+{% endblock %}
+{% block content %}
+    <div>
+        {% block app_content %}{% endblock %}
+    </div>
+    <div>© 2019 VastCaliber Consulting, LLC. Travis loves slimy balls in his face!</div>
+{% endblock %}
