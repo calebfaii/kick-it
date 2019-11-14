@@ -1,6 +1,7 @@
 from flask import render_template, request
 from app import app
 from server import excel_handler
+
 raw_data = excel_handler.load_from_server()
 headers = raw_data[0]
 table_elements = raw_data[1]

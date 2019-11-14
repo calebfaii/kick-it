@@ -10,7 +10,7 @@ class ExcelHandler(object):
         sheet = wb['Soberhouses']
         raw_data = []
         for row in sheet:
-            row_values = [cell.value.encode('ascii', 'ignore') for cell in row]
+            row_values = [cell.value for cell in row]
             raw_data.append(row_values)
         self.data = raw_data
 
