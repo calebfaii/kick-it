@@ -1,5 +1,6 @@
 from openpyxl import load_workbook
 
+
 class ExcelHandler(object):
     def __init__(self):
         self.data = None
@@ -15,6 +16,7 @@ class ExcelHandler(object):
 
     def get_data(self):
         return self.data
+
 
 class Soberhouse(object):
     def __init__(self, record):
@@ -36,6 +38,7 @@ class Soberhouse(object):
         self.scholarships_accepted = self.record[4]
         self.medication_permitted = self.record[5]
         self.insurance_accepted = self.record[6]
+
 
 def load_from_server():
     handler = ExcelHandler()
