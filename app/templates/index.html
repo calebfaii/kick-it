@@ -11,34 +11,12 @@
     </style>
     <h1>Select your criteria below:</h1>
     <div>
-    <h2>Gender</h2>
-    <select name=gender\_options method='GET' action=/'>
-            {% for entry in gender_options %}
-            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
-            {% endfor %}
-    </select>
-    <h2>Medication accepted?</h2>
-    <select name=medication\_options method='GET' action=/'>
-            {% for entry in scholarship_options %}
-            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
-            {% endfor %}
-    </select>
-    <h2>Insurance accepted?</h2>
-    <select name=insurance\_options method='GET' action=/'>
-            {% for entry in scholarship_options %}
-            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
-            {% endfor %}
-    </select>
-    <h2> Scholarships Accepted?</h2>
-    <select name=scholarship\_options method='GET' action=/'>
-            {% for entry in scholarship_options %}
-            <option value= "{{entry}}" SELECTED>{{entry}}</option>"
-            {% endfor %}
-    </select>
-    </div>
-    <div>
-        <form method="post">
-            <input type="submit" name="submit" value="Search for Sober Houses" >
+        <form method="POST" action="/">
+            <div class="form-field"> {{ form.gender_options.label }} {{form.gender_options }} </div>
+            <div class="form-field"> {{ form.medication_options.label }} {{form.medication_options }} </div>
+            <div class="form-field"> {{ form.scholarship_options.label }} {{form.scholarship_options }} </div>
+            <div class="form-field"> {{ form.insurance_options.label }} {{form.insurance_options }} </div>
+            {{ form.submit }}
         </form>
     </div>
 {% endblock %}
